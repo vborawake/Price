@@ -100,7 +100,7 @@ function addToAccordion(index, e) {
             if (button.classList.contains('btn_active_done')) reason = button.innerText
         });
         const html = `
-            <p>Reason For Review <span>${ reason }</span><'p>
+            <p>Reason For Review <span>${ reason }</span></p>
         `;
 
         accordions[index].querySelector('.header').innerHTML = html;
@@ -163,7 +163,3 @@ function checkInputs (index) {
 }
 
 setInactive();
-
-window.addEventListener('resize', () => {
-    console.log(window.innerWidth);
-});
