@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<script defer src="index.js"></script>
 </head>
 <body>
     <div class="row">
@@ -34,218 +35,273 @@
             </nav>
         </div>
     </div>
-    <div class="row" style="margin:50px">
-        <div class="col-md-12">
+    <div class="row" style="margin:50px;">
+        <div class="col-md-8" style="margin: 0 auto;">
             <div class="m-4">
-                <h2 class="accordion-header" id="headingOne" style="margin: 0 0 1rem 0;">
-                    1. What would you like to evaluate?
-                    <!-- <button type="button" class="accordion-button " data-bs-toggle="collapse" data-bs-target="#collapseOne">1. What would you like to evaluate?</button>									 -->
-                </h2>
-                <div class="card-body" style="margin: 0 0 2rem 0; padding: 0 0 2rem 0; border-bottom: 2px solid #000;">
-                    <!--<p>HTML stands for HyperText Markup Language. HTML is the standard markup language for describing the structure of web pages. <a href="https://www.tutorialrepublic.com/html-tutorial/" target="_blank">Learn more.</a></p>-->
-                    <button type="button" class="btn" id="house_btn" onclick="set_css('house_btn');"  style="padding-left:30px;background-color:white;display: inline">
-                        <img style="height:30px;margin-right:20px" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB2aWV3Qm94PSIwIDAgNTggNTAiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgeG1sbnM6c2VyaWY9Imh0dHA6Ly93d3cuc2VyaWYuY29tLyIgc3R5bGU9ImZpbGwtcnVsZTpldmVub2RkO2NsaXAtcnVsZTpldmVub2RkO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2UtbWl0ZXJsaW1pdDoyOyI+CiAgICA8Zz4KICAgICAgICA8cGF0aCBkPSJNNTcuNTEsMjAuNDdMNTIuOTgsMTcuODJMNTIuOTgsNS4wNEM1Mi45OCw0LjQ5IDUyLjUzLDQuMDUgNTEuOTgsNC4wNUw0NS43Niw0LjA1QzQ1LjIxLDQuMDUgNDQuNzYsNC40OSA0NC43Niw1LjA0TDQ0Ljc2LDEzLjAyTDIyLjc2LDAuMTRDMjIuMjksLTAuMTQgMjEuNjgsMC4wMiAyMS40LDAuNDlDMjEuMTIsMC45NiAyMS4yOCwxLjU3IDIxLjc1LDEuODVMMjQuNiwzLjUyTDI0LjYsMTQuNDNMMC41OCwyNS41NEMwLjA4LDI1Ljc3IC0wLjE0LDI2LjM2IDAuMSwyNi44NkMwLjI3LDI3LjIyIDAuNjMsMjcuNDMgMSwyNy40M0MxLjE0LDI3LjQzIDEuMjgsMjcuNCAxLjQyLDI3LjM0TDIuMiwyNi45OEwyLjIsNDkuMDFDMi4yLDQ5LjU2IDIuNjUsNTAgMy4yLDUwTDU0LjI2LDUwQzU0LjgxLDUwIDU1LjI2LDQ5LjU2IDU1LjI2LDQ5LjAxTDU1LjI2LDIxLjQ1TDU2LjUxLDIyLjE4QzU2LjY3LDIyLjI3IDU2Ljg0LDIyLjMyIDU3LjAxLDIyLjMyQzU3LjM1LDIyLjMyIDU3LjY4LDIyLjE1IDU3Ljg3LDIxLjgzQzU4LjE0LDIxLjM2IDU3Ljk4LDIwLjc1IDU3LjUxLDIwLjQ3Wk00Ni43Niw2LjAzTDUwLjk5LDYuMDNMNTAuOTksMTYuNjZMNDYuNzYsMTQuMTlMNDYuNzYsNi4wM1pNNC4xOCwyNi4wNkwyNC42LDE2LjYxTDI0LjYsNDguMDFMMjEuMTIsNDguMDFMMjEuMTIsMzQuODFDMjEuMTIsMzQuMjYgMjAuNjcsMzMuODIgMjAuMTIsMzMuODJMOS40LDMzLjgyQzguODUsMzMuODIgOC40LDM0LjI2IDguNCwzNC44MUw4LjQsNDguMDJMNC4xOCw0OC4wMkw0LjE4LDI2LjA2Wk0xOS4xNCw0OC4wMkwxMC4zOSw0OC4wMkwxMC4zOSwzNS44TDE5LjE0LDM1LjhMMTkuMTQsNDguMDJaTTQ3LjAzLDQ4LjAyTDQwLjkyLDQ4LjAyTDQwLjkyLDM5Ljc1TDQ3LjAzLDM5Ljc1TDQ3LjAzLDQ4LjAyWk0zOC45Myw0OC4wMkwzMi44Miw0OC4wMkwzMi44MiwzOS43NUwzOC45MywzOS43NUwzOC45Myw0OC4wMlpNNTMuMjUsNDguMDJMNDkuMDIsNDguMDJMNDkuMDIsMzguNzVDNDkuMDIsMzguMiA0OC41NywzNy43NiA0OC4wMiwzNy43NkwzMS44MiwzNy43NkMzMS4yNywzNy43NiAzMC44MiwzOC4yIDMwLjgyLDM4Ljc1TDMwLjgyLDQ4LjAyTDI2LjYsNDguMDJMMjYuNiw0LjY4TDUzLjI1LDIwLjI4TDUzLjI1LDQ4LjAyWiIgc3R5bGU9ImZpbGw6cmdiKDcwLDE0MCwyMTEpO2ZpbGwtcnVsZTpub256ZXJvOyIgLz4KICAgICAgICA8cGF0aCBkPSJNOS40LDMxLjI5TDIwLjE0LDMxLjI5QzIwLjY5LDMxLjI5IDIxLjE0LDMwLjg1IDIxLjE0LDMwLjNDMjEuMTQsMjkuNzUgMjAuNjksMjkuMzEgMjAuMTQsMjkuMzFMOS40LDI5LjMxQzguODUsMjkuMzEgOC40LDI5Ljc1IDguNCwzMC4zQzguNCwzMC44NSA4Ljg1LDMxLjI5IDkuNCwzMS4yOVoiIHN0eWxlPSJmaWxsOnJnYig3MCwxNDAsMjExKTtmaWxsLXJ1bGU6bm9uemVybzsiIC8+CiAgICAgICAgPHBhdGggZD0iTTM1Ljc4LDI1LjQ4QzM4LjUxLDI1LjQ4IDQwLjczLDIzLjI3IDQwLjczLDIwLjU1QzQwLjczLDE3LjgzIDM4LjUxLDE1LjYyIDM1Ljc4LDE1LjYyQzMzLjA1LDE1LjYyIDMwLjgzLDE3LjgzIDMwLjgzLDIwLjU1QzMwLjgzLDIzLjI2IDMzLjA1LDI1LjQ4IDM1Ljc4LDI1LjQ4Wk0zNS43OCwxNy41OUMzNy40MSwxNy41OSAzOC43NCwxOC45MSAzOC43NCwyMC41NEMzOC43NCwyMi4xNyAzNy40MSwyMy40OSAzNS43OCwyMy40OUMzNC4xNSwyMy40OSAzMi44MiwyMi4xNyAzMi44MiwyMC41NEMzMi44MiwxOC45MiAzNC4xNSwxNy41OSAzNS43OCwxNy41OVoiIHN0eWxlPSJmaWxsOnJnYig3MCwxNDAsMjExKTtmaWxsLXJ1bGU6bm9uemVybzsiIC8+CiAgICA8L2c+Cjwvc3ZnPgo="> 
-                        House
-                    </button>
+                <div class="default_content">
+                    <div class="accordion_item">
+                        <div class="header" onclick="showContent(0, event)">
+                            <p>Evaluating <span id="choice"></span></p>
+                        </div>
+                        <div class="content">
+                            <h2 class="accordion-header" id="headingOne" style="margin: 0 0 1rem 0;">
+                                What would you like to evaluate?
+                                <!-- <button type="button" class="accordion-button " data-bs-toggle="collapse" data-bs-target="#collapseOne">1. What would you like to evaluate?</button>									 -->
+                            </h2>
+                            <div class="card-body" style="margin: 0 0 2rem 0; padding: 0 0 2rem 0; border-bottom: 0.5px solid #000;">
+                                <!--<p>HTML stands for HyperText Markup Language. HTML is the standard markup language for describing the structure of web pages. <a href="https://www.tutorialrepublic.com/html-tutorial/" target="_blank">Learn more.</a></p>-->
+                                <button type="button" class="btn" id="house_btn" onclick="set_css('house_btn'); removeInactive(1); addToAccordion(0, event);"  style="background-color:white;">
+                                    <img style="height:30px;margin-right:20px" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB2aWV3Qm94PSIwIDAgNTggNTAiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgeG1sbnM6c2VyaWY9Imh0dHA6Ly93d3cuc2VyaWYuY29tLyIgc3R5bGU9ImZpbGwtcnVsZTpldmVub2RkO2NsaXAtcnVsZTpldmVub2RkO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2UtbWl0ZXJsaW1pdDoyOyI+CiAgICA8Zz4KICAgICAgICA8cGF0aCBkPSJNNTcuNTEsMjAuNDdMNTIuOTgsMTcuODJMNTIuOTgsNS4wNEM1Mi45OCw0LjQ5IDUyLjUzLDQuMDUgNTEuOTgsNC4wNUw0NS43Niw0LjA1QzQ1LjIxLDQuMDUgNDQuNzYsNC40OSA0NC43Niw1LjA0TDQ0Ljc2LDEzLjAyTDIyLjc2LDAuMTRDMjIuMjksLTAuMTQgMjEuNjgsMC4wMiAyMS40LDAuNDlDMjEuMTIsMC45NiAyMS4yOCwxLjU3IDIxLjc1LDEuODVMMjQuNiwzLjUyTDI0LjYsMTQuNDNMMC41OCwyNS41NEMwLjA4LDI1Ljc3IC0wLjE0LDI2LjM2IDAuMSwyNi44NkMwLjI3LDI3LjIyIDAuNjMsMjcuNDMgMSwyNy40M0MxLjE0LDI3LjQzIDEuMjgsMjcuNCAxLjQyLDI3LjM0TDIuMiwyNi45OEwyLjIsNDkuMDFDMi4yLDQ5LjU2IDIuNjUsNTAgMy4yLDUwTDU0LjI2LDUwQzU0LjgxLDUwIDU1LjI2LDQ5LjU2IDU1LjI2LDQ5LjAxTDU1LjI2LDIxLjQ1TDU2LjUxLDIyLjE4QzU2LjY3LDIyLjI3IDU2Ljg0LDIyLjMyIDU3LjAxLDIyLjMyQzU3LjM1LDIyLjMyIDU3LjY4LDIyLjE1IDU3Ljg3LDIxLjgzQzU4LjE0LDIxLjM2IDU3Ljk4LDIwLjc1IDU3LjUxLDIwLjQ3Wk00Ni43Niw2LjAzTDUwLjk5LDYuMDNMNTAuOTksMTYuNjZMNDYuNzYsMTQuMTlMNDYuNzYsNi4wM1pNNC4xOCwyNi4wNkwyNC42LDE2LjYxTDI0LjYsNDguMDFMMjEuMTIsNDguMDFMMjEuMTIsMzQuODFDMjEuMTIsMzQuMjYgMjAuNjcsMzMuODIgMjAuMTIsMzMuODJMOS40LDMzLjgyQzguODUsMzMuODIgOC40LDM0LjI2IDguNCwzNC44MUw4LjQsNDguMDJMNC4xOCw0OC4wMkw0LjE4LDI2LjA2Wk0xOS4xNCw0OC4wMkwxMC4zOSw0OC4wMkwxMC4zOSwzNS44TDE5LjE0LDM1LjhMMTkuMTQsNDguMDJaTTQ3LjAzLDQ4LjAyTDQwLjkyLDQ4LjAyTDQwLjkyLDM5Ljc1TDQ3LjAzLDM5Ljc1TDQ3LjAzLDQ4LjAyWk0zOC45Myw0OC4wMkwzMi44Miw0OC4wMkwzMi44MiwzOS43NUwzOC45MywzOS43NUwzOC45Myw0OC4wMlpNNTMuMjUsNDguMDJMNDkuMDIsNDguMDJMNDkuMDIsMzguNzVDNDkuMDIsMzguMiA0OC41NywzNy43NiA0OC4wMiwzNy43NkwzMS44MiwzNy43NkMzMS4yNywzNy43NiAzMC44MiwzOC4yIDMwLjgyLDM4Ljc1TDMwLjgyLDQ4LjAyTDI2LjYsNDguMDJMMjYuNiw0LjY4TDUzLjI1LDIwLjI4TDUzLjI1LDQ4LjAyWiIgc3R5bGU9ImZpbGw6cmdiKDcwLDE0MCwyMTEpO2ZpbGwtcnVsZTpub256ZXJvOyIgLz4KICAgICAgICA8cGF0aCBkPSJNOS40LDMxLjI5TDIwLjE0LDMxLjI5QzIwLjY5LDMxLjI5IDIxLjE0LDMwLjg1IDIxLjE0LDMwLjNDMjEuMTQsMjkuNzUgMjAuNjksMjkuMzEgMjAuMTQsMjkuMzFMOS40LDI5LjMxQzguODUsMjkuMzEgOC40LDI5Ljc1IDguNCwzMC4zQzguNCwzMC44NSA4Ljg1LDMxLjI5IDkuNCwzMS4yOVoiIHN0eWxlPSJmaWxsOnJnYig3MCwxNDAsMjExKTtmaWxsLXJ1bGU6bm9uemVybzsiIC8+CiAgICAgICAgPHBhdGggZD0iTTM1Ljc4LDI1LjQ4QzM4LjUxLDI1LjQ4IDQwLjczLDIzLjI3IDQwLjczLDIwLjU1QzQwLjczLDE3LjgzIDM4LjUxLDE1LjYyIDM1Ljc4LDE1LjYyQzMzLjA1LDE1LjYyIDMwLjgzLDE3LjgzIDMwLjgzLDIwLjU1QzMwLjgzLDIzLjI2IDMzLjA1LDI1LjQ4IDM1Ljc4LDI1LjQ4Wk0zNS43OCwxNy41OUMzNy40MSwxNy41OSAzOC43NCwxOC45MSAzOC43NCwyMC41NEMzOC43NCwyMi4xNyAzNy40MSwyMy40OSAzNS43OCwyMy40OUMzNC4xNSwyMy40OSAzMi44MiwyMi4xNyAzMi44MiwyMC41NEMzMi44MiwxOC45MiAzNC4xNSwxNy41OSAzNS43OCwxNy41OVoiIHN0eWxlPSJmaWxsOnJnYig3MCwxNDAsMjExKTtmaWxsLXJ1bGU6bm9uemVybzsiIC8+CiAgICA8L2c+Cjwvc3ZnPgo="> 
+                                    House
+                                    <div class="check">
+                                        <img src="./images/check.png" alt="">
+                                    </div>
+                                </button>
+            
+                                <button type="button" class="btn" id="apartment_btn" onclick="set_css('apartment_btn'); removeInactive(1); addToAccordion(0, event);" style="background-color:white;display: inline;margin-left:30px">
+                                    <img style="height:30px;margin-right:20px" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB2aWV3Qm94PSIwIDAgNTggNTAiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgeG1sbnM6c2VyaWY9Imh0dHA6Ly93d3cuc2VyaWYuY29tLyIgc3R5bGU9ImZpbGwtcnVsZTpldmVub2RkO2NsaXAtcnVsZTpldmVub2RkO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2UtbWl0ZXJsaW1pdDoyOyI+CiAgICA8cGF0aCBkPSJNNTYuOTksMTIuMTNDNTcuNTUsMTIuMTMgNTgsMTEuNjggNTgsMTEuMTFMNTgsNi45MUM1OCw2LjM1IDU3LjU1LDUuODkgNTYuOTksNS44OUwzMi4zNSw1Ljg5TDIyLjc1LDAuMTRDMjIuNzMsMC4xMyAyMi43MSwwLjEyIDIyLjY5LDAuMTFDMjIuNjMsMC4wOCAyMi41NywwLjA2IDIyLjUsMC4wNEMyMi40MywwLjAyIDIyLjM3LDAuMDEgMjIuMywwTDEuMDEsMEMwLjQ1LDAgMCwwLjQ1IDAsMS4wMkwwLDYuNzJDMCw3LjI4IDAuNDUsNy43NCAxLjAxLDcuNzRMMy4wNiw3Ljc0TDMuMDYsMTAuNjdMMS4wMSwxMC42N0MwLjQ1LDEwLjY2IDAsMTEuMTEgMCwxMS42OEwwLDE1Ljg5QzAsMTYuNDUgMC40NSwxNi45MSAxLjAxLDE2LjkxTDMuMDYsMTYuOTFMMy4wNiwxOS44NEwxLjAxLDE5Ljg0QzAuNDUsMTkuODMgMCwyMC4yOSAwLDIwLjg1TDAsMjUuMDdDMCwyNS42MyAwLjQ1LDI2LjA5IDEuMDEsMjYuMDlMMy4wNiwyNi4wOUwzLjA2LDI5LjAyTDEuMDEsMjkuMDJDMC40NSwyOS4wMSAwLDI5LjQ3IDAsMzAuMDNMMCwzNC4yNEMwLDM0LjggMC40NSwzNS4yNiAxLjAxLDM1LjI2TDMuMDYsMzUuMjZMMy4wNiwzOC4xOUwxLjAxLDM4LjE5QzAuNDUsMzguMTkgMCwzOC42NSAwLDM5LjIxTDAsNDguOTlDMCw0OS41NSAwLjQ1LDUwIDEuMDEsNTBMNTcsNTBDNTcuNTYsNTAgNTguMDEsNDkuNTUgNTguMDEsNDguOThMNTguMDEsMzQuMThDNTguMDEsMzMuNjIgNTcuNTYsMzMuMTYgNTcsMzMuMTZMNTQuMDUsMzMuMTZMNTQuMDUsMzAuNThMNTcsMzAuNThDNTcuNTYsMzAuNTggNTguMDEsMzAuMTMgNTguMDEsMjkuNTZMNTguMDEsMjQuOTVDNTguMDEsMjQuMzkgNTcuNTYsMjMuOTMgNTcsMjMuOTNMNTQuMDUsMjMuOTNMNTQuMDUsMjEuMzVMNTcsMjEuMzVDNTcuNTYsMjEuMzUgNTguMDEsMjAuOSA1OC4wMSwyMC4zM0w1OC4wMSwxNS43MkM1OC4wMSwxNS4xNiA1Ny41NiwxNC43IDU3LDE0LjdMNTQuMDUsMTQuN0w1NC4wNSwxMi4xMkw1Ni45OSwxMi4xMkw1Ni45OSwxMi4xM1pNMjMuMjQsMi44TDI4LjQsNS44OUwyMy4yNCw1Ljg5TDIzLjI0LDIuOFpNNS4wOCw3LjczTDEzLjg4LDcuNzNMMTMuODgsMTAuNjZMNS4wOCwxMC42Nkw1LjA4LDcuNzNaTTUuMDgsMTYuOTFMMTMuODgsMTYuOTFMMTMuODgsMTkuODRMNS4wOCwxOS44NEw1LjA4LDE2LjkxWk01LjA4LDI2LjA4TDEzLjg4LDI2LjA4TDEzLjg4LDI5LjAxTDUuMDgsMjkuMDFMNS4wOCwyNi4wOFpNNS4wOCwzNS4yNkwxMy44OCwzNS4yNkwxMy44OCwzOC4xOUw1LjA4LDM4LjE5TDUuMDgsMzUuMjZaTTIuMDEsNDAuMjJMMTQuODgsNDAuMjJDMTUuNDQsNDAuMjIgMTUuODksMzkuNzcgMTUuODksMzkuMkwxNS44OSwzNC4yNEMxNS44OSwzMy42OCAxNS40NCwzMy4yMiAxNC44OCwzMy4yMkwyLjAxLDMzLjIyTDIuMDEsMzEuMDRMMTQuODgsMzEuMDRDMTUuNDQsMzEuMDQgMTUuODksMzAuNTkgMTUuODksMzAuMDJMMTUuODksMjUuMDZDMTUuODksMjQuNSAxNS40NCwyNC4wNCAxNC44OCwyNC4wNEwyLjAxLDI0LjA0TDIuMDEsMjEuODZMMTQuODgsMjEuODZDMTUuNDQsMjEuODYgMTUuODksMjEuNDEgMTUuODksMjAuODRMMTUuODksMTUuODhDMTUuODksMTUuMzIgMTUuNDQsMTQuODYgMTQuODgsMTQuODZMMi4wMSwxNC44NkwyLjAxLDEyLjY4TDE0Ljg4LDEyLjY4QzE1LjQ0LDEyLjY4IDE1Ljg5LDEyLjIzIDE1Ljg5LDExLjY2TDE1Ljg5LDYuNzFDMTUuODksNi4xNSAxNS40NCw1LjY5IDE0Ljg4LDUuNjlMMi4wMSw1LjY5TDIuMDEsMi4wM0wyMS4yMiwyLjAzTDIxLjIyLDQ3Ljk3TDIuMDEsNDcuOTdMMi4wMSw0MC4yMlpNNTIuMDMsMzMuMTZMMjkuNzYsMzMuMTZMMjkuNzYsMzAuNThMNTIuMDMsMzAuNThMNTIuMDMsMzMuMTZaTTUyLjAzLDIzLjk0TDI5Ljc2LDIzLjk0TDI5Ljc2LDIxLjM2TDUyLjAzLDIxLjM2TDUyLjAzLDIzLjk0Wk01NS45OSwxOS4zMkwyOC43NSwxOS4zMkMyOC4xOSwxOS4zMiAyNy43NCwxOS43NyAyNy43NCwyMC4zNEwyNy43NCwyNC45NUMyNy43NCwyNS41MSAyOC4xOSwyNS45NyAyOC43NSwyNS45N0w1NS45OCwyNS45N0w1NS45OCwyOC41NUwyOC43NSwyOC41NUMyOC4xOSwyOC41NSAyNy43NCwyOSAyNy43NCwyOS41N0wyNy43NCwzNC4xOEMyNy43NCwzNC43NCAyOC4xOSwzNS4yIDI4Ljc1LDM1LjJMNTUuOTgsMzUuMkw1NS45OCw0Ny45N0wyMy4yNCw0Ny45N0wyMy4yNCw3LjkzTDU1Ljk5LDcuOTNMNTUuOTksMTAuMUwyOC43NSwxMC4xQzI4LjE5LDEwLjEgMjcuNzQsMTAuNTUgMjcuNzQsMTEuMTJMMjcuNzQsMTUuNzNDMjcuNzQsMTYuMjkgMjguMTksMTYuNzUgMjguNzUsMTYuNzVMNTUuOTgsMTYuNzVMNTUuOTgsMTkuMzJMNTUuOTksMTkuMzJaTTUyLjAzLDE0LjcxTDI5Ljc2LDE0LjcxTDI5Ljc2LDEyLjEzTDUyLjAzLDEyLjEzTDUyLjAzLDE0LjcxWiIgc3R5bGU9ImZpbGw6cmdiKDcwLDE0MCwyMTEpO2ZpbGwtcnVsZTpub256ZXJvOyIgLz4KPC9zdmc+Cg=="> 
+                                    Apartment
+                                    <div class="check">
+                                        <img src="./images/check.png" alt="">
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion_item">
+                        <div class="header" onclick="showContent(1, event)">
+                            <p><span id="house_type"></span><span id="balcony_terrace"></span></p>
+                        </div>
+                        <div class="content">
+                            <h2 class="accordion-header" id="headingTwo" style="margin: 0 0 1rem 0;">
+                                <!-- <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapseTwo"></button>									 -->
+                                What kind of House?
+                            </h2>
+                            <div class="card-body" style="margin: 0 0 2rem 0; padding: 0 0 2rem 0; border-bottom: 0.5px solid #000;">
+                                <div class="row" style="display: flex; flex-wrap: wrap;">
+                                    <div class="col-md-4">
+                                        <!--<p>HTML stands for HyperText Markup Language. HTML is the standard markup language for describing the structure of web pages. <a href="https://www.tutorialrepublic.com/html-tutorial/" target="_blank">Learn more.</a></p>-->
+                                        <button type="button" class="btn" id="detach_house_btn" onclick="set_css_house('detach_house_btn');" style="padding-left:30px;background-color:white;display: inline">
+                                            Detached House
+                                        </button>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <button type="button" class="btn" id="semi_detach_btn" onclick="set_css_house('semi_detach_btn');"  style="padding-left:30px;background-color:white;display: inline;">
+                                            Semi-Detached House
+                                        </button>
+                                    </div>
+                                
+                                    <div class="col-md-4">
+                                        <button type="button" class="btn" id="stepped_buid_btn" onclick="set_css_house('stepped_buid_btn');"  style="padding-left:30px;background-color:white;display: inline">
+                                            Stepped building
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="row" style="margin-top:20px">
+                                    <div class="col-md-4">
+                                        <button type="button" class="btn" id="terrace_cor_btn" onclick="set_css_house('terrace_cor_btn');"   style="padding-left:30px;background-color:white;display: inline;margin-left:0px">
+                                            Terraced corner house
+                                        </button>
+                                    </div>
+            
+                                    <div class="col-md-4">
+                                        <button type="button" class="btn" id="terraced_house_btn" onclick="set_css_house('terraced_house_btn');"   style="padding-left:30px;background-color:white;display: inline;">
+                                            Terraced house
+                                        </button>
+                                    </div>
+                                </div>
+                                
+            
+                                <br>
+                                <h3 style="margin: 0 0 1rem 0;">Is there a balcony or terrace?</h3>
+                                <div style="display: flex;">
+                                    <div style="display: flex; align-items: center;">
+                                        <input name="option" id="Yes" type="radio" onclick="if (checkButtonSelection(1)) { removeInactive(2); addToAccordion(1, event);}">
+                                        Yes
+                                    </div>
+                                    <div style="display: flex; align-items: center;">
+                                        <input name="option" id="No" type="radio" style="margin-left:30px" onclick="if (checkButtonSelection(1)) {removeInactive(2); addToAccordion(1, event);}">
+                                        No
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion_item">
+                        <div class="header" onclick="showContent(2, event)">
+                            <!-- <p id="space"></p>
+                            <p id="rooms"></p>
+                            <p id="wet_rooms"></p>
+                            <p id="garage"></p>
+                            <p id="year"></p>
+                            <p id="price"></p> -->
+                        </div>
+                        <div class="content">
+                            <h2 class="accordion-header" id="headingThree" style="margin: 0 0 1rem 0;">
+                                <!-- <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapseThree"></button> -->
+                                Object
+                            </h2>
+                            <div class="card-body" style="margin: 0 0 2rem 0; padding: 0 0 2rem 0; border-bottom: 0.5px solid #000;">
+                                <!--<p>HTML stands for HyperText Markup Language. HTML is the standard markup language for describing the structure of web pages. <a href="https://www.tutorialrepublic.com/html-tutorial/" target="_blank">Learn more.</a></p>-->
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <label>Living space in m<carat>2</carat></label>
+                                        <input type="text" class="form-control" id="txt_living" name="txt_living" >
+                                        <p class="small_line">e.g. 80 or 110...</p>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label>Number of Rooms</label>
+                                        <input type="text" class="form-control" id="txt_rooms" name="txt_rooms" >
+                                        <p class="small_line">e.g. 4.5 or 5...</p>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label>Number of Wet rooms</label>
+                                        <input type="text" class="form-control" id="txt_wet_rooms" name="txt_wet_rooms" >
+                                        <p  class="small_line">Room with toilet, bath or shower</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <label>Garage spaces</label>
+                                        <input type="text" class="form-control" id="txt_garage" name="txt_garage" >
+                                        <p class="small_line">Number of parking spaces without outdoor parking spaces</p>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label>Year of construction</label>
+                                        <input type="text" class="form-control" id="txt_year" name="txt_year" >
+                                        <p class="small_line">e.g. 1960, 2010 ...</p>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label>Desired price</label>
+                                        <input type="text" class="form-control" id="txt_price" name="txt_price"  >
+                                        <p class="small_line">Approximate asking price e.g 500'000</p>
+                                    </div>
+                                </div>
+                                <div class="row" style="margin-top:20px">
+                                    <div class="col-md-12">
+                                        <h3 style="margin: 0 0 1rem 0;">Location of the property</h3>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <input type="text" class="form-control" id="txt_zip" name="txt_zip"  placeholder="Zip code" >
+                                    </div>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" id="txt_place" name="txt_place"  placeholder="Place" >
+                                    </div>
+                                </div>
+                                <div class="row" style="margin-top:20px">
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" id="txt_street" name="txt_street"  placeholder="Street" >
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="text" class="form-control" id="txt_no" name="txt_no"  placeholder="No" >
+                                    </div>
+                                </div>
+                                <p class="small_line" style="margin-top:20px">The address of the property affects the market value.</p>
+                                <div class="row" style="margin-top:20px">
+                                    <div class="col-md-12">
+                                        <button class="btn" onclick="if (checkInputs(2)) {removeInactive(3); addToAccordion(2, event)}" style="float:right"><i class="fa fa-arrow-down"></i> Further</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion_item">
+                        <div class="header" onclick="showContent(3, event)">
+                        </div>
+                        <div class="content">
+                            <h2 class="accordion-header" id="headingFour" style="margin: 0 0 1rem 0;">
+                                <!-- <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapseFour">4. Your Details</button> -->
+                                Your Details
+                            </h2>
+                            <div class="card-body" style="margin: 0 0 2rem 0; padding: 0 0 2rem 0; border-bottom: 0.5px solid #000;">
+                                <!--<p>HTML stands for HyperText Markup Language. HTML is the standard markup language for describing the structure of web pages. <a href="https://www.tutorialrepublic.com/html-tutorial/" target="_blank">Learn more.</a></p>-->
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <select class="form-control" id="cmb_salutation" name="cmb_salutation">
+                                            <option>Select salutation</option>
+                                            <option>Wife</option>
+                                            <option>Lord</option>
+                                        </select>
+                                    </div>
+                                    
+                                </div>
+                                <div class="row" style="margin-top:20px">
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" id="txt_forename" name="txt_forename" placeholder="Forename">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" id="txt_surname" name="txt_surname" placeholder="Surname">
+                                    </div>
+                                </div>
+                                <div class="row" style="margin-top:20px">
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" id="txt_email" name="txt_email" placeholder="Email">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" id="txt_phone" name="txt_phone" placeholder="Telephone Number">
+                                    </div>
+                                </div>
+                                <div class="row" style="margin-top:20px">
+                                    <div class="col-md-12">
+                                        <button class="btn" onclick="if (checkInputs(3)) {removeInactive(4); addToAccordion(3, event)}" style="float:right"><i class="fa fa-arrow-down"></i> Further</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion_item">
+                        <div class="header" onclick="showContent(4, event)">
 
-                    <button type="button" class="btn" id="apartment_btn" onclick="set_css('apartment_btn');" style="padding-left:30px;background-color:white;display: inline;margin-left:30px">
-                        <img style="height:30px;margin-right:20px" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB2aWV3Qm94PSIwIDAgNTggNTAiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgeG1sbnM6c2VyaWY9Imh0dHA6Ly93d3cuc2VyaWYuY29tLyIgc3R5bGU9ImZpbGwtcnVsZTpldmVub2RkO2NsaXAtcnVsZTpldmVub2RkO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2UtbWl0ZXJsaW1pdDoyOyI+CiAgICA8cGF0aCBkPSJNNTYuOTksMTIuMTNDNTcuNTUsMTIuMTMgNTgsMTEuNjggNTgsMTEuMTFMNTgsNi45MUM1OCw2LjM1IDU3LjU1LDUuODkgNTYuOTksNS44OUwzMi4zNSw1Ljg5TDIyLjc1LDAuMTRDMjIuNzMsMC4xMyAyMi43MSwwLjEyIDIyLjY5LDAuMTFDMjIuNjMsMC4wOCAyMi41NywwLjA2IDIyLjUsMC4wNEMyMi40MywwLjAyIDIyLjM3LDAuMDEgMjIuMywwTDEuMDEsMEMwLjQ1LDAgMCwwLjQ1IDAsMS4wMkwwLDYuNzJDMCw3LjI4IDAuNDUsNy43NCAxLjAxLDcuNzRMMy4wNiw3Ljc0TDMuMDYsMTAuNjdMMS4wMSwxMC42N0MwLjQ1LDEwLjY2IDAsMTEuMTEgMCwxMS42OEwwLDE1Ljg5QzAsMTYuNDUgMC40NSwxNi45MSAxLjAxLDE2LjkxTDMuMDYsMTYuOTFMMy4wNiwxOS44NEwxLjAxLDE5Ljg0QzAuNDUsMTkuODMgMCwyMC4yOSAwLDIwLjg1TDAsMjUuMDdDMCwyNS42MyAwLjQ1LDI2LjA5IDEuMDEsMjYuMDlMMy4wNiwyNi4wOUwzLjA2LDI5LjAyTDEuMDEsMjkuMDJDMC40NSwyOS4wMSAwLDI5LjQ3IDAsMzAuMDNMMCwzNC4yNEMwLDM0LjggMC40NSwzNS4yNiAxLjAxLDM1LjI2TDMuMDYsMzUuMjZMMy4wNiwzOC4xOUwxLjAxLDM4LjE5QzAuNDUsMzguMTkgMCwzOC42NSAwLDM5LjIxTDAsNDguOTlDMCw0OS41NSAwLjQ1LDUwIDEuMDEsNTBMNTcsNTBDNTcuNTYsNTAgNTguMDEsNDkuNTUgNTguMDEsNDguOThMNTguMDEsMzQuMThDNTguMDEsMzMuNjIgNTcuNTYsMzMuMTYgNTcsMzMuMTZMNTQuMDUsMzMuMTZMNTQuMDUsMzAuNThMNTcsMzAuNThDNTcuNTYsMzAuNTggNTguMDEsMzAuMTMgNTguMDEsMjkuNTZMNTguMDEsMjQuOTVDNTguMDEsMjQuMzkgNTcuNTYsMjMuOTMgNTcsMjMuOTNMNTQuMDUsMjMuOTNMNTQuMDUsMjEuMzVMNTcsMjEuMzVDNTcuNTYsMjEuMzUgNTguMDEsMjAuOSA1OC4wMSwyMC4zM0w1OC4wMSwxNS43MkM1OC4wMSwxNS4xNiA1Ny41NiwxNC43IDU3LDE0LjdMNTQuMDUsMTQuN0w1NC4wNSwxMi4xMkw1Ni45OSwxMi4xMkw1Ni45OSwxMi4xM1pNMjMuMjQsMi44TDI4LjQsNS44OUwyMy4yNCw1Ljg5TDIzLjI0LDIuOFpNNS4wOCw3LjczTDEzLjg4LDcuNzNMMTMuODgsMTAuNjZMNS4wOCwxMC42Nkw1LjA4LDcuNzNaTTUuMDgsMTYuOTFMMTMuODgsMTYuOTFMMTMuODgsMTkuODRMNS4wOCwxOS44NEw1LjA4LDE2LjkxWk01LjA4LDI2LjA4TDEzLjg4LDI2LjA4TDEzLjg4LDI5LjAxTDUuMDgsMjkuMDFMNS4wOCwyNi4wOFpNNS4wOCwzNS4yNkwxMy44OCwzNS4yNkwxMy44OCwzOC4xOUw1LjA4LDM4LjE5TDUuMDgsMzUuMjZaTTIuMDEsNDAuMjJMMTQuODgsNDAuMjJDMTUuNDQsNDAuMjIgMTUuODksMzkuNzcgMTUuODksMzkuMkwxNS44OSwzNC4yNEMxNS44OSwzMy42OCAxNS40NCwzMy4yMiAxNC44OCwzMy4yMkwyLjAxLDMzLjIyTDIuMDEsMzEuMDRMMTQuODgsMzEuMDRDMTUuNDQsMzEuMDQgMTUuODksMzAuNTkgMTUuODksMzAuMDJMMTUuODksMjUuMDZDMTUuODksMjQuNSAxNS40NCwyNC4wNCAxNC44OCwyNC4wNEwyLjAxLDI0LjA0TDIuMDEsMjEuODZMMTQuODgsMjEuODZDMTUuNDQsMjEuODYgMTUuODksMjEuNDEgMTUuODksMjAuODRMMTUuODksMTUuODhDMTUuODksMTUuMzIgMTUuNDQsMTQuODYgMTQuODgsMTQuODZMMi4wMSwxNC44NkwyLjAxLDEyLjY4TDE0Ljg4LDEyLjY4QzE1LjQ0LDEyLjY4IDE1Ljg5LDEyLjIzIDE1Ljg5LDExLjY2TDE1Ljg5LDYuNzFDMTUuODksNi4xNSAxNS40NCw1LjY5IDE0Ljg4LDUuNjlMMi4wMSw1LjY5TDIuMDEsMi4wM0wyMS4yMiwyLjAzTDIxLjIyLDQ3Ljk3TDIuMDEsNDcuOTdMMi4wMSw0MC4yMlpNNTIuMDMsMzMuMTZMMjkuNzYsMzMuMTZMMjkuNzYsMzAuNThMNTIuMDMsMzAuNThMNTIuMDMsMzMuMTZaTTUyLjAzLDIzLjk0TDI5Ljc2LDIzLjk0TDI5Ljc2LDIxLjM2TDUyLjAzLDIxLjM2TDUyLjAzLDIzLjk0Wk01NS45OSwxOS4zMkwyOC43NSwxOS4zMkMyOC4xOSwxOS4zMiAyNy43NCwxOS43NyAyNy43NCwyMC4zNEwyNy43NCwyNC45NUMyNy43NCwyNS41MSAyOC4xOSwyNS45NyAyOC43NSwyNS45N0w1NS45OCwyNS45N0w1NS45OCwyOC41NUwyOC43NSwyOC41NUMyOC4xOSwyOC41NSAyNy43NCwyOSAyNy43NCwyOS41N0wyNy43NCwzNC4xOEMyNy43NCwzNC43NCAyOC4xOSwzNS4yIDI4Ljc1LDM1LjJMNTUuOTgsMzUuMkw1NS45OCw0Ny45N0wyMy4yNCw0Ny45N0wyMy4yNCw3LjkzTDU1Ljk5LDcuOTNMNTUuOTksMTAuMUwyOC43NSwxMC4xQzI4LjE5LDEwLjEgMjcuNzQsMTAuNTUgMjcuNzQsMTEuMTJMMjcuNzQsMTUuNzNDMjcuNzQsMTYuMjkgMjguMTksMTYuNzUgMjguNzUsMTYuNzVMNTUuOTgsMTYuNzVMNTUuOTgsMTkuMzJMNTUuOTksMTkuMzJaTTUyLjAzLDE0LjcxTDI5Ljc2LDE0LjcxTDI5Ljc2LDEyLjEzTDUyLjAzLDEyLjEzTDUyLjAzLDE0LjcxWiIgc3R5bGU9ImZpbGw6cmdiKDcwLDE0MCwyMTEpO2ZpbGwtcnVsZTpub256ZXJvOyIgLz4KPC9zdmc+Cg=="> 
-                        Apartment
-                    </button>
-                </div>
-                
-                <h2 class="accordion-header" id="headingTwo" style="margin: 0 0 1rem 0;">
-                    <!-- <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapseTwo"></button>									 -->
-                    2. What kind of House?
-                </h2>
-                <div class="card-body" style="margin: 0 0 2rem 0; padding: 0 0 2rem 0; border-bottom: 2px solid #000;">
-                        <div class="row">
-                        <div class="col-md-4">
-                            <!--<p>HTML stands for HyperText Markup Language. HTML is the standard markup language for describing the structure of web pages. <a href="https://www.tutorialrepublic.com/html-tutorial/" target="_blank">Learn more.</a></p>-->
-                            <button type="button" class="btn" id="detach_house_btn" onclick="set_css_house('detach_house_btn');" style="padding-left:30px;background-color:white;display: inline">
-                                Detached House
-                            </button>
                         </div>
-                        <div class="col-md-4">
-                            <button type="button" class="btn" id="semi_detach_btn" onclick="set_css_house('semi_detach_btn');"  style="padding-left:30px;background-color:white;display: inline;margin-left:30px">
-                                Semi-Detached House
-                            </button>
-                        </div>
-                    
-                        <div class="col-md-4">
-                            <button type="button" class="btn" id="stepped_buid_btn" onclick="set_css_house('stepped_buid_btn');"  style="padding-left:30px;background-color:white;display: inline">
-                                Stepped building
-                            </button>
-                        </div>
-                    </div>
-                    <div class="row" style="margin-top:20px">
-                        <div class="col-md-4">
-                            <button type="button" class="btn" id="terrace_cor_btn" onclick="set_css_house('terrace_cor_btn');"   style="padding-left:30px;background-color:white;display: inline;margin-left:0px">
-                                Terraced corner house
-                            </button>
-                        </div>
-
-                        <div class="col-md-4">
-                            <button type="button" class="btn" id="terraced_house_btn" onclick="set_css_house('terraced_house_btn');"   style="padding-left:30px;background-color:white;display: inline;margin-left:30px">
-                                Terraced house
-                            </button>
-                        </div>
-                    </div>
-                    
-
-                    <br>
-                    <h3 style="margin: 0 0 1rem 0;">Is there a balcony or terrace?</h3>
-                    <input type="radio"> Yes<input type="radio" style="margin-left:30px"> No
-                </div>
-                <h2 class="accordion-header" id="headingThree" style="margin: 0 0 1rem 0;">
-                    <!-- <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapseThree"></button> -->
-                    3. Object
-                </h2>
-                <div class="card-body" style="margin: 0 0 2rem 0; padding: 0 0 2rem 0; border-bottom: 2px solid #000;">
-                    <!--<p>HTML stands for HyperText Markup Language. HTML is the standard markup language for describing the structure of web pages. <a href="https://www.tutorialrepublic.com/html-tutorial/" target="_blank">Learn more.</a></p>-->
-                    <div class="row">
-                        <div class="col-md-4">
-                            <label>Living space in m<carat>2</carat></label>
-                            <input type="text" class="form-control" id="txt_living" name="txt_living" >
-                            <p class="small_line">e.g. 80 or 110...</p>
-                        </div>
-                        <div class="col-md-4">
-                            <label>Number of Rooms</label>
-                            <input type="text" class="form-control" id="txt_rooms" name="txt_rooms" >
-                            <p class="small_line">e.g. 4.5 or 5...</p>
-                        </div>
-                        <div class="col-md-4">
-                            <label>Number of Wet rooms</label>
-                            <input type="text" class="form-control" id="txt_wet_rooms" name="txt_wet_rooms" >
-                            <p  class="small_line">Room with toilet, bath or shower</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <label>Garage spaces</label>
-                            <input type="text" class="form-control" id="txt_garage" name="txt_garage" >
-                            <p class="small_line">Number of parking spaces without outdoor parking spaces</p>
-                        </div>
-                        <div class="col-md-4">
-                            <label>Year of construction</label>
-                            <input type="text" class="form-control" id="txt_year" name="txt_year" >
-                            <p class="small_line">e.g. 1960, 2010 ...</p>
-                        </div>
-                        <div class="col-md-4">
-                            <label>Desired price</label>
-                            <input type="text" class="form-control" id="txt_price" name="txt_price"  >
-                            <p class="small_line">Approximate asking price e.g 500'000</p>
-                        </div>
-                    </div>
-                    <div class="row" style="margin-top:20px">
-                        <div class="col-md-12">
-                            <h3 style="margin: 0 0 1rem 0;">Location of the property</h3>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-3">
-                            <input type="text" class="form-control" id="txt_zip" name="txt_zip"  placeholder="Zip code" >
-                        </div>
-                        <div class="col-md-9">
-                            <input type="text" class="form-control" id="txt_place" name="txt_place"  placeholder="Place" >
-                        </div>
-                    </div>
-                    <div class="row" style="margin-top:20px">
-                        <div class="col-md-9">
-                            <input type="text" class="form-control" id="txt_street" name="txt_street"  placeholder="Street" >
-                        </div>
-                        <div class="col-md-3">
-                            <input type="text" class="form-control" id="txt_no" name="txt_no"  placeholder="No" >
-                        </div>
-                    </div>
-                    <p class="small_line" style="margin-top:20px">The address of the property affects the market value.</p>
-                    <div class="row" style="margin-top:20px">
-                        <div class="col-md-12">
-                            <button class="btn" onclick="set_four();" style="float:right"><i class="fa fa-arrow-down"></i> Further</button>
-                        </div>
-                    </div>
-                </div>
-                <h2 class="accordion-header" id="headingFour" style="margin: 0 0 1rem 0;">
-                    <!-- <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapseFour">4. Your Details</button> -->
-                    4. Your Details
-                </h2>
-                <div class="card-body" style="margin: 0 0 2rem 0; padding: 0 0 2rem 0; border-bottom: 2px solid #000;">
-                    <!--<p>HTML stands for HyperText Markup Language. HTML is the standard markup language for describing the structure of web pages. <a href="https://www.tutorialrepublic.com/html-tutorial/" target="_blank">Learn more.</a></p>-->
-                    <div class="row">
-                        <div class="col-md-6">
-                            <select class="form-control" id="cmb_salutation" name="cmb_salutation">
-                                <option>Select salutation</option>
-                                <option>Wife</option>
-                                <option>Lord</option>
-                            </select>
-                        </div>
-                        
-                    </div>
-                    <div class="row" style="margin-top:20px">
-                        <div class="col-md-6">
-                            <input type="text" class="form-control" id="txt_forename" name="txt_forename" placeholder="Forename">
-                        </div>
-                        <div class="col-md-6">
-                            <input type="text" class="form-control" id="txt_surname" name="txt_surname" placeholder="Surname">
-                        </div>
-                    </div>
-                    <div class="row" style="margin-top:20px">
-                        <div class="col-md-6">
-                            <input type="text" class="form-control" id="txt_email" name="txt_email" placeholder="Email">
-                        </div>
-                        <div class="col-md-6">
-                            <input type="text" class="form-control" id="txt_phone" name="txt_phone" placeholder="Telephone Number">
-                        </div>
-                    </div>
-                    <div class="row" style="margin-top:20px">
-                        <div class="col-md-12">
-                            <button class="btn" onclick="set_five();" style="float:right"><i class="fa fa-arrow-down"></i> Further</button>
-                        </div>
-                    </div>
-                </div>
-                <h2 class="accordion-header" id="headingFive" style="margin: 0 0 1rem 0;">
-                    <!-- <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapseFive">5. Almost Done</button> -->
-                    5. Almost Done
-                </h2>
-                <div class="card-body" style="margin: 0 0 2rem 0; padding: 0 0 2rem 0; border-bottom: 2px solid #000;">           
-                    <div class="row" style="margin:15px">
-                        <h4 style="margin: 0 0 2rem 0;">Please let us know the reason for the review</h4>
-                        <div class="col-md-3">
-                            <button class="btn" id="btn_1" onclick="done('btn_1');" style="border:2px #CFA76D solid;margin:10px">
-                                <div style="margin:20px !important">
-                                    <img style="height:80px;margin-right:20px" src="data:image/svg+xml;base64,PHN2ZyBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxNDEuNzMgMTQxLjczIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAxNDEuNzMgMTQxLjczIiB4bWw6c3BhY2U9InByZXNlcnZlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgoJPHN0eWxlIHR5cGU9InRleHQvY3NzIj4KCS5zdDB7ZmlsbDpub25lO3N0cm9rZTojNDg4QUM5O3N0cm9rZS13aWR0aDo0O3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2UtbWl0ZXJsaW1pdDoxMDt9Cgkuc3Qxe2ZpbGw6bm9uZTtzdHJva2U6IzQ4OEFDOTtzdHJva2Utd2lkdGg6NDtzdHJva2UtbGluZWpvaW46cm91bmQ7c3Ryb2tlLW1pdGVybGltaXQ6MTA7fQoJLnN0MntmaWxsOiM0ODhBQzk7fQo8L3N0eWxlPgoJPHN3aXRjaD4KCQk8Zm9yZWlnbk9iamVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIxIiByZXF1aXJlZEV4dGVuc2lvbnM9Imh0dHA6Ly9ucy5hZG9iZS5jb20vQWRvYmVJbGx1c3RyYXRvci8xMC4wLyI+PC9mb3JlaWduT2JqZWN0PgoJCTxnPgoKCgkJCTxsaW5lIGNsYXNzPSJzdDAiIHgxPSI0MC42MSIgeDI9IjQwLjYxIiB5MT0iNzQuOTYiIHkyPSIzMy4xOSIgLz4KCQkJPGxpbmUgY2xhc3M9InN0MCIgeDE9IjEwOC43MSIgeDI9IjEwOC43MSIgeTE9IjMzLjE5IiB5Mj0iNjQuMzEiIC8+CgkJCTxwb2x5bGluZSBjbGFzcz0ic3QwIiBwb2ludHM9IjMxLjg3IDM5Ljg2IDc0LjY2IDQuNDggMTE3LjQ2IDM5Ljg2IiAvPgoJCQk8cG9seWxpbmUgY2xhc3M9InN0MCIgcG9pbnRzPSI2MS41IDc2LjQ4IDYxLjUgNDguMTggODcuODMgNDguMTggODcuODMgNzkuMTEiIC8+CgoKCQkJPHBhdGggY2xhc3M9InN0MCIgZD0ibTcuMTEgMTEzLjYzIDIxLjk4IDE1Ljc5IDExLjQ1LTE1Ljk0IDM5Ljg4IDAuMjhjNi40MiAwLjI0IDEwLjAzLTAuMjkgMTMuNC00LjM4bDM3LjgtNDQuMjJjMy0zLjUxIDIuNTgtOC44My0wLjkzLTExLjgzcy04LjgzLTIuNTgtMTEuODMgMC45M2wtMjYuMDUgMjUuODFzLTQuNzYtMC42LTguNDgtMS4wMmwtMzguNjEtNC4zNWMtNy41Ni0wLjg1LTE0LjU3IDMuMzMtMTcuNyA5Ljg0bC0yMC45MSAyOS4wOXoiIC8+CgkJCTxwYXRoIGNsYXNzPSJzdDAiIGQ9Im00OS4wOCA3NS4wOCA0Mi43NSA0LjgyYzQuNjIgMC41MiA3Ljk3IDQuNzIgNy40NSA5LjM0cy00LjcyIDcuOTctOS4zNCA3LjQ1bC0zMC43OC0zLjQ3IiAvPgoKCgkJPC9nPgoJPC9zd2l0Y2g+Cgo8L3N2Zz4K"> 
-                                    <p class="done">I'm Selling in the next 12 months
+                        <div class="content">
+                            <h2 class="accordion-header" id="headingFive" style="margin: 0 0 1rem 0;">
+                                <!-- <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapseFive">5. Almost Done</button> -->
+                                Almost Done
+                            </h2>
+                            <div class="card-body" style="margin: 0 0 2rem 0; padding: 0 0 2rem 0; border-bottom: 0.5px solid #000;">           
+                                <div class="row" style="margin:15px">
+                                    <h4 style="margin: 0 0 2rem 0;">Please let us know the reason for the review</h4>
+                                    <div class="col-md-3">
+                                        <button class="btn" id="btn_1" onclick="done('btn_1'); addToAccordion(4, event)" style="border:2px #CFA76D solid;margin:10px; width: 100%;">
+                                            <div style="margin:20px !important">
+                                                <img style="height:80px;margin-right:20px" src="data:image/svg+xml;base64,PHN2ZyBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxNDEuNzMgMTQxLjczIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAxNDEuNzMgMTQxLjczIiB4bWw6c3BhY2U9InByZXNlcnZlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgoJPHN0eWxlIHR5cGU9InRleHQvY3NzIj4KCS5zdDB7ZmlsbDpub25lO3N0cm9rZTojNDg4QUM5O3N0cm9rZS13aWR0aDo0O3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2UtbWl0ZXJsaW1pdDoxMDt9Cgkuc3Qxe2ZpbGw6bm9uZTtzdHJva2U6IzQ4OEFDOTtzdHJva2Utd2lkdGg6NDtzdHJva2UtbGluZWpvaW46cm91bmQ7c3Ryb2tlLW1pdGVybGltaXQ6MTA7fQoJLnN0MntmaWxsOiM0ODhBQzk7fQo8L3N0eWxlPgoJPHN3aXRjaD4KCQk8Zm9yZWlnbk9iamVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIxIiByZXF1aXJlZEV4dGVuc2lvbnM9Imh0dHA6Ly9ucy5hZG9iZS5jb20vQWRvYmVJbGx1c3RyYXRvci8xMC4wLyI+PC9mb3JlaWduT2JqZWN0PgoJCTxnPgoKCgkJCTxsaW5lIGNsYXNzPSJzdDAiIHgxPSI0MC42MSIgeDI9IjQwLjYxIiB5MT0iNzQuOTYiIHkyPSIzMy4xOSIgLz4KCQkJPGxpbmUgY2xhc3M9InN0MCIgeDE9IjEwOC43MSIgeDI9IjEwOC43MSIgeTE9IjMzLjE5IiB5Mj0iNjQuMzEiIC8+CgkJCTxwb2x5bGluZSBjbGFzcz0ic3QwIiBwb2ludHM9IjMxLjg3IDM5Ljg2IDc0LjY2IDQuNDggMTE3LjQ2IDM5Ljg2IiAvPgoJCQk8cG9seWxpbmUgY2xhc3M9InN0MCIgcG9pbnRzPSI2MS41IDc2LjQ4IDYxLjUgNDguMTggODcuODMgNDguMTggODcuODMgNzkuMTEiIC8+CgoKCQkJPHBhdGggY2xhc3M9InN0MCIgZD0ibTcuMTEgMTEzLjYzIDIxLjk4IDE1Ljc5IDExLjQ1LTE1Ljk0IDM5Ljg4IDAuMjhjNi40MiAwLjI0IDEwLjAzLTAuMjkgMTMuNC00LjM4bDM3LjgtNDQuMjJjMy0zLjUxIDIuNTgtOC44My0wLjkzLTExLjgzcy04LjgzLTIuNTgtMTEuODMgMC45M2wtMjYuMDUgMjUuODFzLTQuNzYtMC42LTguNDgtMS4wMmwtMzguNjEtNC4zNWMtNy41Ni0wLjg1LTE0LjU3IDMuMzMtMTcuNyA5Ljg0bC0yMC45MSAyOS4wOXoiIC8+CgkJCTxwYXRoIGNsYXNzPSJzdDAiIGQ9Im00OS4wOCA3NS4wOCA0Mi43NSA0LjgyYzQuNjIgMC41MiA3Ljk3IDQuNzIgNy40NSA5LjM0cy00LjcyIDcuOTctOS4zNCA3LjQ1bC0zMC43OC0zLjQ3IiAvPgoKCgkJPC9nPgoJPC9zd2l0Y2g+Cgo8L3N2Zz4K"> 
+                                                <p class="done">I'm Selling in the next 12 months
+                                            </div>
+                                        </button>
+                                    </div>
+                                    <div class="col-md-3" >
+                                        <button class="btn" id="btn_2" onclick="done('btn_2'); addToAccordion(4, event)" style="border:2px #CFA76D solid;margin:10px; width: 100%;">
+                                            <div style="margin:20px !important">
+                                                <img style="height:80px;margin-right:20px" src="data:image/svg+xml;base64,PHN2ZyBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxNDEuNzMgMTQxLjczIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAxNDEuNzMgMTQxLjczIiB4bWw6c3BhY2U9InByZXNlcnZlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgoJPHN0eWxlIHR5cGU9InRleHQvY3NzIj4KCS5zdDB7ZmlsbDpub25lO3N0cm9rZTojNDg4QUM5O3N0cm9rZS13aWR0aDo0O3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2UtbWl0ZXJsaW1pdDoxMDt9Cgkuc3Qxe2ZpbGw6bm9uZTtzdHJva2U6IzQ4OEFDOTtzdHJva2Utd2lkdGg6NDtzdHJva2UtbGluZWpvaW46cm91bmQ7c3Ryb2tlLW1pdGVybGltaXQ6MTA7fQoJLnN0MntmaWxsOiM0ODhBQzk7fQo8L3N0eWxlPgoJPHN3aXRjaD4KCQk8Zm9yZWlnbk9iamVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIxIiByZXF1aXJlZEV4dGVuc2lvbnM9Imh0dHA6Ly9ucy5hZG9iZS5jb20vQWRvYmVJbGx1c3RyYXRvci8xMC4wLyI+PC9mb3JlaWduT2JqZWN0PgoJCTxnPgoKCgkJCTxwb2x5bGluZSBjbGFzcz0ic3QwIiBwb2ludHM9IjIzLjgzIDU2LjI5IDE5Ljk3IDI3LjIxIDQxLjEyIDI0LjQxIiAvPgoJCQk8cG9seWxpbmUgY2xhc3M9InN0MCIgcG9pbnRzPSI5Ny40NCAxNi45MyAxMTguNTkgMTQuMTIgMTMwLjY4IDEwNS4xMyAxMTEuOTEgMTA3LjYyIiAvPgoJCQk8bGluZSBjbGFzcz0ic3QwIiB4MT0iNDkuODciIHgyPSI4OC42OSIgeTE9IjIzLjI0IiB5Mj0iMTguMDkiIC8+CgoJCQk8cGF0aCBjbGFzcz0ic3QwIiBkPSJtNDYuODYgMzQuMTJjLTIuNDIgMC4zMi00LjY0LTEuMzgtNC45Ni0zLjhsLTEuMjEtOS4xNWMtMC4zMi0yLjQyIDEuMzgtNC42NCAzLjgtNC45NnM0LjY0IDEuMzggNC45NiAzLjhsMS4yMSA5LjE1YzAuMzIgMi40MS0xLjM4IDQuNjMtMy44IDQuOTZ6IiAvPgoJCQk8cGF0aCBjbGFzcz0ic3QwIiBkPSJtOTQuNDMgMjcuOGMtMi40MiAwLjMyLTQuNjQtMS4zOC00Ljk2LTMuOGwtMS4yMS05LjE1Yy0wLjMyLTIuNDIgMS4zOC00LjY0IDMuOC00Ljk2czQuNjQgMS4zOCA0Ljk2IDMuOGwxLjIxIDkuMTVjMC4zMiAyLjQyLTEuMzggNC42NC0zLjggNC45NnoiIC8+CgoKCQkJPGxpbmUgY2xhc3M9InN0MSIgeDE9IjIyLjU0IiB4Mj0iMTIxLjYiIHkxPSI1MC43MSIgeTI9IjM3LjU2IiAvPgoJCQk8cG9seWdvbiBjbGFzcz0ic3QwIiBwb2ludHM9Ijg5LjM4IDEwMy41NyA4Ny44MSAxMjguNTggMTQuMDIgMTI0LjQxIDE3Ljg5IDU1Ljk1IDExNi44NyA2MS41NSAxMTQuMzggMTA1LjQ3IiAvPgoJCQk8bGluZSBjbGFzcz0ic3QwIiB4MT0iODcuODEiIHgyPSIxMTQuMzgiIHkxPSIxMjguNTgiIHkyPSIxMDUuNDciIC8+CgkJCTxwb2x5bGluZSBjbGFzcz0ic3QwIiBwb2ludHM9IjQwLjQ5IDkzLjU1IDUzLjI5IDExMC4xMSA4Ny42OSA4Mi40NSIgLz4KCgkJPC9nPgoJPC9zd2l0Y2g+Cgo8L3N2Zz4K"> 
+                                                <p class="done">I'm Selling in the next few years
+                                            </div>
+                                        </button>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <button class="btn"  id="btn_3" onclick="done('btn_3'); addToAccordion(4, event)" style="border:2px #CFA76D solid;margin:10px; width: 100%;">
+                                            <div style="margin:20px !important">
+                                                <img style="height:80px;margin-right:20px" src="data:image/svg+xml;base64,PHN2ZyBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxNDEuNzMgMTQxLjczIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAxNDEuNzMgMTQxLjczIiB4bWw6c3BhY2U9InByZXNlcnZlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgoJPHN0eWxlIHR5cGU9InRleHQvY3NzIj4KCS5zdDB7ZmlsbDpub25lO3N0cm9rZTojNDg4QUM5O3N0cm9rZS13aWR0aDo0O3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2UtbWl0ZXJsaW1pdDoxMDt9Cgkuc3Qxe2ZpbGw6bm9uZTtzdHJva2U6IzQ4OEFDOTtzdHJva2Utd2lkdGg6NDtzdHJva2UtbGluZWpvaW46cm91bmQ7c3Ryb2tlLW1pdGVybGltaXQ6MTA7fQoJLnN0MntmaWxsOiM0ODhBQzk7fQo8L3N0eWxlPgoJPHN3aXRjaD4KCQk8Zm9yZWlnbk9iamVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIxIiByZXF1aXJlZEV4dGVuc2lvbnM9Imh0dHA6Ly9ucy5hZG9iZS5jb20vQWRvYmVJbGx1c3RyYXRvci8xMC4wLyI+PC9mb3JlaWduT2JqZWN0PgoJCTxnPgoKCQkJPHBvbHlsaW5lIGNsYXNzPSJzdDAiIHBvaW50cz0iODQuNzcgODYuMDYgNDIuMTQgODkuNzQgMzkuMDQgNTMuOCIgLz4KCQkJPGxpbmUgY2xhc3M9InN0MCIgeDE9Ijg2LjU4IiB4Mj0iODkuMDEiIHkxPSI0OS42OSIgeTI9Ijc3LjkxIiAvPgoJCQk8cG9seWxpbmUgY2xhc3M9InN0MCIgcG9pbnRzPSIzMy4zMyA1OC45OSA2MS4wOCAzMS43MSA5My4wOCA1My44MyIgLz4KCgkJCTxwYXRoIGNsYXNzPSJzdDAiIGQ9Im0zNS45NCAxMTcuMjZzMTAtOC4yOCA5LjQ1LTE0LjU1Yy0wLjU0LTYuMjctOS42LTMuMDItNy43MyA1Ljg5IDEuODcgOC45IDcuNTYgMTAuNzIgMTIuNjYgNy44NiA3LjYxLTQuMjcgMC42MS0xMC44Ny0yLjE5LTUuNzQtMi4xMyAzLjkgNiAxMC44NCAyNi43NS0wLjIyIiAvPgoKCQkJPHBhdGggY2xhc3M9InN0MCIgZD0ibTk1LjY2IDkwLjA3LTEwLjI1LTUuOTYgMzUuMzgtNjAuODZjMS41NS0yLjY2IDQuOTktMy41NyA3LjY1LTIuMDJsMC41OCAwLjM0YzIuNjYgMS41NSAzLjU3IDQuOTkgMi4wMiA3LjY1bC0zNS4zOCA2MC44NXoiIC8+CgkJCTxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xMTUuMTIsMzIuOTlsMTAuMjUsNS45NmwxLjc2LDEuMDJjMi42NywxLjU1LDMuNTgsNC45OCwyLjAyLDcuNjVMMTE3LjksNjcuMDEiIC8+CgkJCTxwYXRoIGNsYXNzPSJzdDAiIGQ9Im04NS40MSA4NC4xMS02Ljg1IDIwLjg2Yy0wLjQ3IDEuNDMgMS4zNSAyLjQ5IDIuMzcgMS4zN2wxNC43NC0xNi4yOC0xMC4yNi01Ljk1eiIgLz4KCgkJCTxwb2x5bGluZSBjbGFzcz0ic3QwIiBwb2ludHM9IjEwOC4zNiA2OC4yMyAxMTMuNTggMTIxLjA0IDI2LjE0IDEyOS43IDE1LjExIDE4LjMgMTAyLjU1IDkuNjQgMTA2LjM2IDQ4LjA3IiAvPgoJCTwvZz4KCTwvc3dpdGNoPgoKPC9zdmc+Cg=="> 
+                                                <p class="done">I am interested in acquiring
+                                            </div>
+                                        </button>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <button class="btn"  id="btn_4" onclick="done('btn_4'); addToAccordion(4, event)" style="border:2px #CFA76D solid;margin:10px; width: 100%;">
+                                            <div style="margin:20px !important">
+                                                <img style="height:80px;margin-right:20px" src="data:image/svg+xml;base64,PHN2ZyBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxNDEuNzMgMTQxLjczIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAxNDEuNzMgMTQxLjczIiB4bWw6c3BhY2U9InByZXNlcnZlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgoJPHN0eWxlIHR5cGU9InRleHQvY3NzIj4KCS5zdDB7ZmlsbDpub25lO3N0cm9rZTojNDg4QUM5O3N0cm9rZS13aWR0aDo0O3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2UtbWl0ZXJsaW1pdDoxMDt9Cgkuc3Qxe2ZpbGw6bm9uZTtzdHJva2U6IzQ4OEFDOTtzdHJva2Utd2lkdGg6NDtzdHJva2UtbGluZWpvaW46cm91bmQ7c3Ryb2tlLW1pdGVybGltaXQ6MTA7fQoJLnN0MntmaWxsOiM0ODhBQzk7fQo8L3N0eWxlPgoJPHN3aXRjaD4KCQk8Zm9yZWlnbk9iamVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIxIiByZXF1aXJlZEV4dGVuc2lvbnM9Imh0dHA6Ly9ucy5hZG9iZS5jb20vQWRvYmVJbGx1c3RyYXRvci8xMC4wLyI+PC9mb3JlaWduT2JqZWN0PgoJCTxnPgoKCgkJCTxwb2x5bGluZSBjbGFzcz0ic3QwIiBwb2ludHM9Ijk2Ljg4IDczLjkgOTYuODggMTMzLjE3IDE4LjM0IDEzMy4xNyAxOC4zNCA3My45IiAvPgoJCQk8bGluZSBjbGFzcz0ic3QwIiB4MT0iODQuODciIHgyPSIxMDYuOTYiIHkxPSI2My4zNCIgeTI9IjgxLjYiIC8+CgkJCTxwb2x5bGluZSBjbGFzcz0ic3QwIiBwb2ludHM9IjguMjYgODEuNiA1Ny42MSA0MC44IDc1LjcxIDU1Ljc3IiAvPgoJCQk8cG9seWxpbmUgY2xhc3M9InN0MCIgcG9pbnRzPSI0Mi40MyAxMzMuMTcgNDIuNDMgOTEuMiA3Mi43OSA5MS4yIDcyLjc5IDEzMy4xNyIgLz4KCgoJCQk8cGF0aCBjbGFzcz0ic3QwIiBkPSJtNzguMDYgNDguOTktNi42NCAxOS4xMiAxOS4xNC02Ljc5YzEwLjgzIDUuNSAyNC40MSAzLjc0IDMzLjQ2LTUuMzIgMTEuMjYtMTEuMjYgMTEuMjYtMjkuNTMgMC00MC43OXMtMjkuNTMtMTEuMjYtNDAuNzkgMGMtOS4xNSA5LjE1LTEwLjg3IDIyLjktNS4xNyAzMy43OHoiIC8+CgoJCQk8cGF0aCBjbGFzcz0ic3QyIiBkPSJtODUuODggNDIuNDNjLTEuMTQtMC42My0yLjAyLTEuNTItMi42Mi0yLjY3LTAuNjEtMS4xNS0wLjkxLTIuNDgtMC45MS0zLjk5czAuMy0yLjg0IDAuOTEtMy45OCAxLjQ4LTIuMDMgMi42Mi0yLjY2IDIuNDgtMC45NSA0LjAyLTAuOTVjMC45NyAwIDEuOSAwLjE1IDIuOCAwLjQ0czEuNjQgMC42OSAyLjIyIDEuMThsLTEuMiAyLjczYy0xLjIyLTAuODUtMi40Ni0xLjI4LTMuNzQtMS4yOC0xLjIgMC0yLjEyIDAuMzgtMi43NiAxLjEzLTAuNjQgMC43Ni0wLjk2IDEuODgtMC45NiAzLjM4czAuMzIgMi42MyAwLjk2IDMuMzkgMS41NiAxLjE0IDIuNzYgMS4xNGMxLjI3IDAgMi41Mi0wLjQzIDMuNzQtMS4yOGwxLjIgMi43M2MtMC41NyAwLjQ5LTEuMzEgMC44OC0yLjIyIDEuMTgtMC45IDAuMjktMS44NCAwLjQ0LTIuOCAwLjQ0LTEuNTQgMC4wMS0yLjg4LTAuMy00LjAyLTAuOTN6IiAvPgoJCQk8cGF0aCBjbGFzcz0ic3QyIiBkPSJNMTA2Ljc5LDI4LjM4aDMuNzh2MTQuOGgtMy43OFYzNy4yaC02LjA1djUuOTloLTMuNzh2LTE0LjhoMy43OHY1Ljc1aDYuMDVWMjguMzh6IiAvPgoJCQk8cGF0aCBjbGFzcz0ic3QyIiBkPSJtMTEzLjI1IDQzLjE4di0xNC44aDEwLjMxdjMuMDJoLTYuNTF2Mi43M2g2LjA5djMuMDJoLTYuMDl2Ni4wM2gtMy44eiIgLz4KCgkJPC9nPgoJPC9zd2l0Y2g+Cgo8L3N2Zz4K"> 
+                                                <p class="done">I'm only interested in the value
+                                            </div>
+                                        </button>
+                                    </div>
                                 </div>
-                            </button>
-                        </div>
-                        <div class="col-md-3" >
-                            <button class="btn" id="btn_2" onclick="done('btn_2');" style="border:2px #CFA76D solid;margin:10px">
-                                <div style="margin:20px !important">
-                                    <img style="height:80px;margin-right:20px" src="data:image/svg+xml;base64,PHN2ZyBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxNDEuNzMgMTQxLjczIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAxNDEuNzMgMTQxLjczIiB4bWw6c3BhY2U9InByZXNlcnZlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgoJPHN0eWxlIHR5cGU9InRleHQvY3NzIj4KCS5zdDB7ZmlsbDpub25lO3N0cm9rZTojNDg4QUM5O3N0cm9rZS13aWR0aDo0O3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2UtbWl0ZXJsaW1pdDoxMDt9Cgkuc3Qxe2ZpbGw6bm9uZTtzdHJva2U6IzQ4OEFDOTtzdHJva2Utd2lkdGg6NDtzdHJva2UtbGluZWpvaW46cm91bmQ7c3Ryb2tlLW1pdGVybGltaXQ6MTA7fQoJLnN0MntmaWxsOiM0ODhBQzk7fQo8L3N0eWxlPgoJPHN3aXRjaD4KCQk8Zm9yZWlnbk9iamVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIxIiByZXF1aXJlZEV4dGVuc2lvbnM9Imh0dHA6Ly9ucy5hZG9iZS5jb20vQWRvYmVJbGx1c3RyYXRvci8xMC4wLyI+PC9mb3JlaWduT2JqZWN0PgoJCTxnPgoKCgkJCTxwb2x5bGluZSBjbGFzcz0ic3QwIiBwb2ludHM9IjIzLjgzIDU2LjI5IDE5Ljk3IDI3LjIxIDQxLjEyIDI0LjQxIiAvPgoJCQk8cG9seWxpbmUgY2xhc3M9InN0MCIgcG9pbnRzPSI5Ny40NCAxNi45MyAxMTguNTkgMTQuMTIgMTMwLjY4IDEwNS4xMyAxMTEuOTEgMTA3LjYyIiAvPgoJCQk8bGluZSBjbGFzcz0ic3QwIiB4MT0iNDkuODciIHgyPSI4OC42OSIgeTE9IjIzLjI0IiB5Mj0iMTguMDkiIC8+CgoJCQk8cGF0aCBjbGFzcz0ic3QwIiBkPSJtNDYuODYgMzQuMTJjLTIuNDIgMC4zMi00LjY0LTEuMzgtNC45Ni0zLjhsLTEuMjEtOS4xNWMtMC4zMi0yLjQyIDEuMzgtNC42NCAzLjgtNC45NnM0LjY0IDEuMzggNC45NiAzLjhsMS4yMSA5LjE1YzAuMzIgMi40MS0xLjM4IDQuNjMtMy44IDQuOTZ6IiAvPgoJCQk8cGF0aCBjbGFzcz0ic3QwIiBkPSJtOTQuNDMgMjcuOGMtMi40MiAwLjMyLTQuNjQtMS4zOC00Ljk2LTMuOGwtMS4yMS05LjE1Yy0wLjMyLTIuNDIgMS4zOC00LjY0IDMuOC00Ljk2czQuNjQgMS4zOCA0Ljk2IDMuOGwxLjIxIDkuMTVjMC4zMiAyLjQyLTEuMzggNC42NC0zLjggNC45NnoiIC8+CgoKCQkJPGxpbmUgY2xhc3M9InN0MSIgeDE9IjIyLjU0IiB4Mj0iMTIxLjYiIHkxPSI1MC43MSIgeTI9IjM3LjU2IiAvPgoJCQk8cG9seWdvbiBjbGFzcz0ic3QwIiBwb2ludHM9Ijg5LjM4IDEwMy41NyA4Ny44MSAxMjguNTggMTQuMDIgMTI0LjQxIDE3Ljg5IDU1Ljk1IDExNi44NyA2MS41NSAxMTQuMzggMTA1LjQ3IiAvPgoJCQk8bGluZSBjbGFzcz0ic3QwIiB4MT0iODcuODEiIHgyPSIxMTQuMzgiIHkxPSIxMjguNTgiIHkyPSIxMDUuNDciIC8+CgkJCTxwb2x5bGluZSBjbGFzcz0ic3QwIiBwb2ludHM9IjQwLjQ5IDkzLjU1IDUzLjI5IDExMC4xMSA4Ny42OSA4Mi40NSIgLz4KCgkJPC9nPgoJPC9zd2l0Y2g+Cgo8L3N2Zz4K"> 
-                                    <p class="done">I'm Selling in the next few years
-                                </div>
-                            </button>
-                        </div>
-                        <div class="col-md-3">
-                            <button class="btn"  id="btn_3" onclick="done('btn_3');" style="border:2px #CFA76D solid;margin:10px">
-                                <div style="margin:20px !important">
-                                    <img style="height:80px;margin-right:20px" src="data:image/svg+xml;base64,PHN2ZyBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxNDEuNzMgMTQxLjczIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAxNDEuNzMgMTQxLjczIiB4bWw6c3BhY2U9InByZXNlcnZlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgoJPHN0eWxlIHR5cGU9InRleHQvY3NzIj4KCS5zdDB7ZmlsbDpub25lO3N0cm9rZTojNDg4QUM5O3N0cm9rZS13aWR0aDo0O3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2UtbWl0ZXJsaW1pdDoxMDt9Cgkuc3Qxe2ZpbGw6bm9uZTtzdHJva2U6IzQ4OEFDOTtzdHJva2Utd2lkdGg6NDtzdHJva2UtbGluZWpvaW46cm91bmQ7c3Ryb2tlLW1pdGVybGltaXQ6MTA7fQoJLnN0MntmaWxsOiM0ODhBQzk7fQo8L3N0eWxlPgoJPHN3aXRjaD4KCQk8Zm9yZWlnbk9iamVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIxIiByZXF1aXJlZEV4dGVuc2lvbnM9Imh0dHA6Ly9ucy5hZG9iZS5jb20vQWRvYmVJbGx1c3RyYXRvci8xMC4wLyI+PC9mb3JlaWduT2JqZWN0PgoJCTxnPgoKCQkJPHBvbHlsaW5lIGNsYXNzPSJzdDAiIHBvaW50cz0iODQuNzcgODYuMDYgNDIuMTQgODkuNzQgMzkuMDQgNTMuOCIgLz4KCQkJPGxpbmUgY2xhc3M9InN0MCIgeDE9Ijg2LjU4IiB4Mj0iODkuMDEiIHkxPSI0OS42OSIgeTI9Ijc3LjkxIiAvPgoJCQk8cG9seWxpbmUgY2xhc3M9InN0MCIgcG9pbnRzPSIzMy4zMyA1OC45OSA2MS4wOCAzMS43MSA5My4wOCA1My44MyIgLz4KCgkJCTxwYXRoIGNsYXNzPSJzdDAiIGQ9Im0zNS45NCAxMTcuMjZzMTAtOC4yOCA5LjQ1LTE0LjU1Yy0wLjU0LTYuMjctOS42LTMuMDItNy43MyA1Ljg5IDEuODcgOC45IDcuNTYgMTAuNzIgMTIuNjYgNy44NiA3LjYxLTQuMjcgMC42MS0xMC44Ny0yLjE5LTUuNzQtMi4xMyAzLjkgNiAxMC44NCAyNi43NS0wLjIyIiAvPgoKCQkJPHBhdGggY2xhc3M9InN0MCIgZD0ibTk1LjY2IDkwLjA3LTEwLjI1LTUuOTYgMzUuMzgtNjAuODZjMS41NS0yLjY2IDQuOTktMy41NyA3LjY1LTIuMDJsMC41OCAwLjM0YzIuNjYgMS41NSAzLjU3IDQuOTkgMi4wMiA3LjY1bC0zNS4zOCA2MC44NXoiIC8+CgkJCTxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xMTUuMTIsMzIuOTlsMTAuMjUsNS45NmwxLjc2LDEuMDJjMi42NywxLjU1LDMuNTgsNC45OCwyLjAyLDcuNjVMMTE3LjksNjcuMDEiIC8+CgkJCTxwYXRoIGNsYXNzPSJzdDAiIGQ9Im04NS40MSA4NC4xMS02Ljg1IDIwLjg2Yy0wLjQ3IDEuNDMgMS4zNSAyLjQ5IDIuMzcgMS4zN2wxNC43NC0xNi4yOC0xMC4yNi01Ljk1eiIgLz4KCgkJCTxwb2x5bGluZSBjbGFzcz0ic3QwIiBwb2ludHM9IjEwOC4zNiA2OC4yMyAxMTMuNTggMTIxLjA0IDI2LjE0IDEyOS43IDE1LjExIDE4LjMgMTAyLjU1IDkuNjQgMTA2LjM2IDQ4LjA3IiAvPgoJCTwvZz4KCTwvc3dpdGNoPgoKPC9zdmc+Cg=="> 
-                                    <p class="done">I am interested in acquiring
-                                </div>
-                            </button>
-                        </div>
-                        <div class="col-md-3">
-                            <button class="btn"  id="btn_4" onclick="done('btn_4');" style="border:2px #CFA76D solid;margin:10px">
-                                <div style="margin:20px !important">
-                                    <img style="height:80px;margin-right:20px" src="data:image/svg+xml;base64,PHN2ZyBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxNDEuNzMgMTQxLjczIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAxNDEuNzMgMTQxLjczIiB4bWw6c3BhY2U9InByZXNlcnZlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgoJPHN0eWxlIHR5cGU9InRleHQvY3NzIj4KCS5zdDB7ZmlsbDpub25lO3N0cm9rZTojNDg4QUM5O3N0cm9rZS13aWR0aDo0O3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2UtbWl0ZXJsaW1pdDoxMDt9Cgkuc3Qxe2ZpbGw6bm9uZTtzdHJva2U6IzQ4OEFDOTtzdHJva2Utd2lkdGg6NDtzdHJva2UtbGluZWpvaW46cm91bmQ7c3Ryb2tlLW1pdGVybGltaXQ6MTA7fQoJLnN0MntmaWxsOiM0ODhBQzk7fQo8L3N0eWxlPgoJPHN3aXRjaD4KCQk8Zm9yZWlnbk9iamVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIxIiByZXF1aXJlZEV4dGVuc2lvbnM9Imh0dHA6Ly9ucy5hZG9iZS5jb20vQWRvYmVJbGx1c3RyYXRvci8xMC4wLyI+PC9mb3JlaWduT2JqZWN0PgoJCTxnPgoKCgkJCTxwb2x5bGluZSBjbGFzcz0ic3QwIiBwb2ludHM9Ijk2Ljg4IDczLjkgOTYuODggMTMzLjE3IDE4LjM0IDEzMy4xNyAxOC4zNCA3My45IiAvPgoJCQk8bGluZSBjbGFzcz0ic3QwIiB4MT0iODQuODciIHgyPSIxMDYuOTYiIHkxPSI2My4zNCIgeTI9IjgxLjYiIC8+CgkJCTxwb2x5bGluZSBjbGFzcz0ic3QwIiBwb2ludHM9IjguMjYgODEuNiA1Ny42MSA0MC44IDc1LjcxIDU1Ljc3IiAvPgoJCQk8cG9seWxpbmUgY2xhc3M9InN0MCIgcG9pbnRzPSI0Mi40MyAxMzMuMTcgNDIuNDMgOTEuMiA3Mi43OSA5MS4yIDcyLjc5IDEzMy4xNyIgLz4KCgoJCQk8cGF0aCBjbGFzcz0ic3QwIiBkPSJtNzguMDYgNDguOTktNi42NCAxOS4xMiAxOS4xNC02Ljc5YzEwLjgzIDUuNSAyNC40MSAzLjc0IDMzLjQ2LTUuMzIgMTEuMjYtMTEuMjYgMTEuMjYtMjkuNTMgMC00MC43OXMtMjkuNTMtMTEuMjYtNDAuNzkgMGMtOS4xNSA5LjE1LTEwLjg3IDIyLjktNS4xNyAzMy43OHoiIC8+CgoJCQk8cGF0aCBjbGFzcz0ic3QyIiBkPSJtODUuODggNDIuNDNjLTEuMTQtMC42My0yLjAyLTEuNTItMi42Mi0yLjY3LTAuNjEtMS4xNS0wLjkxLTIuNDgtMC45MS0zLjk5czAuMy0yLjg0IDAuOTEtMy45OCAxLjQ4LTIuMDMgMi42Mi0yLjY2IDIuNDgtMC45NSA0LjAyLTAuOTVjMC45NyAwIDEuOSAwLjE1IDIuOCAwLjQ0czEuNjQgMC42OSAyLjIyIDEuMThsLTEuMiAyLjczYy0xLjIyLTAuODUtMi40Ni0xLjI4LTMuNzQtMS4yOC0xLjIgMC0yLjEyIDAuMzgtMi43NiAxLjEzLTAuNjQgMC43Ni0wLjk2IDEuODgtMC45NiAzLjM4czAuMzIgMi42MyAwLjk2IDMuMzkgMS41NiAxLjE0IDIuNzYgMS4xNGMxLjI3IDAgMi41Mi0wLjQzIDMuNzQtMS4yOGwxLjIgMi43M2MtMC41NyAwLjQ5LTEuMzEgMC44OC0yLjIyIDEuMTgtMC45IDAuMjktMS44NCAwLjQ0LTIuOCAwLjQ0LTEuNTQgMC4wMS0yLjg4LTAuMy00LjAyLTAuOTN6IiAvPgoJCQk8cGF0aCBjbGFzcz0ic3QyIiBkPSJNMTA2Ljc5LDI4LjM4aDMuNzh2MTQuOGgtMy43OFYzNy4yaC02LjA1djUuOTloLTMuNzh2LTE0LjhoMy43OHY1Ljc1aDYuMDVWMjguMzh6IiAvPgoJCQk8cGF0aCBjbGFzcz0ic3QyIiBkPSJtMTEzLjI1IDQzLjE4di0xNC44aDEwLjMxdjMuMDJoLTYuNTF2Mi43M2g2LjA5djMuMDJoLTYuMDl2Ni4wM2gtMy44eiIgLz4KCgkJPC9nPgoJPC9zd2l0Y2g+Cgo8L3N2Zz4K"> 
-                                    <p class="done">I'm only interested in the value
-                                </div>
-                            </button>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <center>
-                    <input type="button" onclick="get_quote()" class="btn" value="Show results" style="margin-bottom:30px;margin-top:30px">
+                    <input type="button" onclick="get_quote();" class="btn" value="Show results" style="margin-bottom:30px;margin-top:30px">
                     <div class="loader" id="loader_div" style="visibility:hidden;display:none"></div>
                 </center>
                 
@@ -339,34 +395,63 @@
 
     .btn
     {
+        position: relative;
         border-radius: 5px;
-        border:1px #CFA76D dashed;
-        font-size:20px;
+        border:4px #CFA76D double;
+        font-size:16px;
         color:#CFA76D !important;
+        width: 16rem;
+        text-align: left;
+        overflow: hidden;
+    }
+
+    .btn .check {
+        transform: scale(0);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        height: 100%;
+        width: 20%;
+        top: 0;
+        right: 0;
+        background: #607265;
+    }
+    
+    .btn:hover {
+        border:4px #7E7E7E double;
+        color: #7E7E7E !important;
     }
 
     .btn:focus
     {
-        background:#CFA76D !important;
-        color:white !important;
+        border: none;
+        outline: none;
     }
 
     .btn_active
     {
-        background:#CFA76D !important;
-        color:white !important;
+        background:#2A2A2A !important;
+        color:#CFA76D !important;
+        border: none;
     }
 
+    .btn_active:hover, .btn_active_house:hover, .btn_active_done:hover {
+        color: #CFA76D;
+    }
+    
     .btn_active_house
     {
-        background:#CFA76D !important;
-        color:white !important;
+        border: none;
+        background:#2A2A2A !important;
+        color:#CFA76D !important;
     }
-
+    
     .btn_active_done
     {
-        background:#CFA76D !important;
-        color:white !important;
+        border: none;
+        background:#2A2A2A !important;
+        color:#CFA76D !important;
     }
 
     .accordion-button
@@ -384,15 +469,22 @@
     h3
     {
         color:#CFA76D !important;
+        font-size: 21px;
+    }
+    
+    h2
+    {
+        font-size: 21px;
+        font-weight: 600;
+        color: #595959;
     }
     input[type=radio]
     {
         margin-left:20px;
-    }
-
-    .row 
-    {
-        /*margin-top:20px !important;*/
+        width: 1.5rem;
+        height: 1.5rem;
+        background: none;
+        margin-right: 0.5rem;
     }
 
     hr
@@ -403,6 +495,83 @@
     {
         font-size:13px;
         color:gray;
+    }
+
+    .inactive {
+        opacity: 0.5;
+    }
+
+    .inactive button {
+        pointer-events: none;
+    }
+
+    .inactive input {
+        pointer-events: none;
+    }
+    
+    .accordion_item .header {
+        display: none;
+        flex-direction: row;
+        align-items: center;
+        transform: scaleY(0);
+        transform-origin: top;
+        /* height: 0px; */
+        /* overflow: hidden; */
+        transition: all 1s ease;
+        height: 4rem;
+        font-size: 1.3rem;
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+        transition-delay: 0.5s;
+        margin: 0 0 1rem 0;
+    }
+
+    .accordion_item .header span {
+        font-size: 1.3rem;
+        font-weight: 600;
+    }
+
+    .accordion_item .content {
+        transition: all 0.6s ease;
+        min-height: fit-content;
+        /* display: none; */
+        transform-origin: top;
+    }
+
+    @media screen and (min-width: 1200px) and (max-width: 1400px) {
+        html {
+            font-size: 14px;
+        }
+
+        .card-body:nth-child(2) .btn {
+            width: 16rem;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+    }
+    
+    @media screen and (min-width: 992px) and (max-width: 1200px) {
+        html {
+            font-size: 14px;
+        }
+        
+        .card-body:nth-child(2) .btn {
+            width: 13rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+    }
+    
+    @media screen and (min-width: 768px) and (max-width: 992px) {
+        html {
+            font-size: 14px;
+        }
+        
+        .card-body:nth-child(2) .btn {
+            width: 10rem;
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
     }
     
 </style>                  
@@ -600,8 +769,10 @@ $credential_str = json_encode($credential);
 <script type="text/javascript">
     function set_css(button_id)
     {
+        $(".btn_active").find('.check').css({'transform': 'scale(0)'});
         $(".btn_active").removeClass('btn_active');
         $("#"+button_id).attr('class','btn btn_active');
+        $("#"+button_id).find('.check').css({'transform': 'scale(1)'});
 
         $("#collapseOne").removeClass('show');
         $("#collapseTwo").addClass('show');
